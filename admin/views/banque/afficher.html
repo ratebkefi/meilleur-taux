@@ -1,0 +1,174 @@
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="row">
+
+                <div class="col s12 m12 l12">
+                    <div class="card-panel">
+                        <h4 class="header2">Banque: {{ banque.raison_social }}</h4>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Logo</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p><img src="{{photoUrl}}{{ banque.logo }}" width="100px" height="100px"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Raison sociale</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.raison_social }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Capital</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.capital }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Adresse</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.adresse }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Téléphone 1</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.tel }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Téléphone 2</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.tel2 }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Fax</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.fax }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Site web</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.site_web }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">E-mail</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.email }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">OffShore</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+                            <div ng-if="banque.offshore == true" class="input-field col s12 m9 l9">
+                                <p>Oui</p>
+                            </div>
+                            <div ng-if="banque.offshore == false" class="input-field col s12 m9 l9">
+                                <p>Non</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Banque Centrale</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+                            <div ng-if="banque.centrale == true" class="input-field col s12 m9 l9">
+                                <p>Oui</p>
+                            </div>
+                            <div ng-if="banque.centrale == false" class="input-field col s12 m9 l9">
+                                <p>Non</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">Remarque</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.remarque }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m3 l3">
+                                <div class="bottom-line">
+                                    <h4 class="header3">URL de la devise</h4>
+                                    <span class="line"><em></em></span>
+                                </div>
+                            </div>
+
+                            <div class="input-field col s12 m9 l9">
+                                <p>{{ banque.url_devise }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

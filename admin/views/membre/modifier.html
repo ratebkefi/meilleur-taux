@@ -1,0 +1,191 @@
+<div uploader="uploader" class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h4 class="header2">Modifier le membre</h4>
+                <div class="row">
+                    <form name="membreForm" ng-submit="modifier_membre(item)" class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <input ng-model="item.nom_prenom" type="text" id="nom_prenom" nom_prenom="name"
+                                       class="validate"
+                                       required>
+                                <label for="nom_prenom">Nom et Prénom</label>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <input ng-model="item.email" id="email" type="email" name="email" class="validate"
+                                       required>
+                                <label for="email">E-mail</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <input id="pwd" ng-model="item.pwd" type="password" name="pwd" class="validate"
+                                       required>
+                                <label for="pwd">Mot de passe</label>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <input id="emploi" ng-model="item.emploi" type="text" name="emploi" class="validate">
+                                <label for="emploi">Emploi</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                    <label for="date_naissance">Date de naissance</label>
+                                    <input input-date type="text" name="date_naissance" id="date_naissance"
+                                           ng-model="item.date_naissance" container="body" format="yyyy/mm/dd"
+                                           required/>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <input ng-model="item.societe" type="text" id="societe" name="societe" class="validate">
+                                <label for="societe">Entreprise</label>
+                            </div>
+                        </div>
+                       <!-- <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label">Sexe</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <select class="" ng-model="item.sexe" material-select watch>
+                                            <option ng-selected="item.sexe === true" value="1">Homme</option>
+                                            <option ng-selected="item.sexe === false" value="0">Femme</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label">Etat</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <select class="" ng-model="item.etat"
+                                                material-select watch>
+                                            <option ng-selected="item.etat === true" value="1">Activé</option>
+                                            <option ng-selected="item.etat === false" value="0">Désactivé</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="row">
+                            <div  class="col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select">Sexe :</label>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="input-field">
+                                        <select class="" ng-model="item.sexe" ng-init="item.sexe = true" material-select
+                                                watch>
+                                            <option value="1">Homme</option>
+                                            <option value="0">Femme</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div  class="col s12 m6 l6">
+                                <div class="row">
+
+
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select">Etat :</label>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="input-field">
+                                        <select class="" ng-model="item.etat"
+                                                ng-init="item.etat = true"
+                                                material-select watch>
+                                            <option value="1">Activé</option>
+                                            <option value="0">Désactivé</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="row">
+                            <div class="input-field col s12 m12 l12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label">Résumé quotidien</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12 m6 l6">
+                                        <select class="" ng-model="item.resumer_quotidien"
+                                                material-select watch>
+                                            <option ng-selected="item.resumer_quotidien === true" value="1">Inscrit
+                                            </option>
+                                            <option ng-selected="item.resumer_quotidien === false" value="0">Non inscrit
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="input-field col s12 m6 l6">
+                                        <input id="tel" string-to-number ng-model="item.tel" type="number" name="tel"
+                                               class="validate">
+                                        <label for="tel">Téléphone</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="row">
+                            <div  class="col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select">Résumé quotidien :</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field">
+                                        <select class="" ng-model="item.resumer_quotidien"
+                                                ng-init="item.resumer_quotidien = true"
+                                                material-select watch>
+                                            <option value="1">Inscrit</option>
+                                            <option value="0">Non inscrit</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div  class="col s12 m6 l6">
+                                <div class="row">
+
+
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select"></label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field">
+                                        <input id="tel" ng-model="item.tel" type="number" name="tel" class="validate">
+                                        <label for="tel">Téléphone</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <button type="submit" class="btn orange lighten-2">Modifier</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

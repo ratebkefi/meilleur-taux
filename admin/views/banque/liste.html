@@ -1,0 +1,76 @@
+<!--Liste des banques-->
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="right">
+                <a ui-sref="dashboard.banqueajouter" class="btn orange lighten-2 waves-effect waves-light"><i
+                        class="mdi-image-edit right"></i>Ajouter une banque</a>
+            </div>
+        </div>
+    </div>
+    <h4 class="header2">Liste des banques</h4>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="table-responsive">
+                <table class="striped" ng-table="banquesTable">
+                    <tr ng-repeat="banque in data">
+                        <td data-title="'Logo'">
+                            <a href="" ng-click="afficher(banque)"><img src="{{photoUrl}}{{ banque.logo }}"
+                                                                        width="100px" height="100px"></a>
+                        </td>
+                        <td data-title="'Raison Sociale'">
+                            {{banque.raison_social}}
+                        </td>
+                        <td data-title="'URL de la devise'">
+                            {{banque.url_devise}}
+                        </td>
+                        <td data-title="''">
+                            <a tooltipped ng-click="modifier(banque)"
+                               class="btn-floating orange lighten-2 waves-effect waves-light "
+                               data-position="top" data-tooltip="Modifier"><i class="mdi-image-edit"></i></a>
+                        </td>
+                        <td data-title="''">
+                            <a href='#demoModal{{banque.id}}'
+                               class="btn-floating red darken-1 waves-effect waves-light tooltipped" data-position="top"
+                               data-tooltip="Supprimer" modal><i class="mdi-navigation-close"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-repeat="banque in data">
+    <!-- Modal Structure -->
+    <div id="demoModal{{banque.id}}" class="modal">
+        <div class="modal-content">
+            <h4>Confirmation de suppression</h4>
+            <p>Êtes-vous sûr de vouloir supprimer la banque: "{{banque.raison_social}}"</p>
+        </div>
+        <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green btn red darken-1">Annuler</a>
+            <a ng-click="supprimer_banque(banque)"
+               class="btn orange lighten-2 modal-action modal-close waves-effect waves-green">OK</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

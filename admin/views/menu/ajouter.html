@@ -1,0 +1,44 @@
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h4 class="header2">Ajout un menu</h4>
+                <div class="row">
+                    <form name="agenceForm" ng-submit="ajouter_menu(item)">
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <input id="url" ng-model="item.titre" type="text" name="name" class="validate" required>
+                                <label for="url">Titre</label>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <select class="" ng-model="item.type"
+                                        ng-init="item.type = types[0].type"
+                                        material-select watch>
+                                    <option ng-repeat="value in types" value="{{value.value}}">{{value.type}}</option>
+                                </select>                                <label for="maxc">Type</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div ng-hide="true">{{item.page=itemPage[0]}}</div>
+                                <select name="mySelect" id="mySelect"
+                                        ng-options="option.nom for option in itemPage track by option.nom"
+                                        ng-model="item.page"
+                                        material-select watch></select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn orange lighten-2">Ajouter</button>
+                    </form>
+                </div>            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

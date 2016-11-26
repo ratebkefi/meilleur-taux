@@ -1,0 +1,33 @@
+security:
+    encoders:
+        Admin\FrontendUserBundle\Document\FrontendUser: sha512
+    role_hierarchy:
+        ROLE_ADMIN:       [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        UTILISATEUR: modifier_utilisateur,ajouter_utilisateur,supprimer_utilisateur,lister_utilisateurs,afficher_utilisateur
+        GROUPE: modifier_groupe,ajouter_groupe,supprimer_groupe,lister_groupes,afficher_groupe
+        PAGE: afficher_page,lister_page,supprimer_page,ajouter_page,modifier_page
+        PUBLICITE: afficher_publicite,lister_publicites,supprimer_publicite,ajouter_publicite,modifier_publicite,nbr_click_publicite,incr_click_publicite,nbr_vu_publicite,incr_vu_publicite
+        DEVISE: afficher_devise,lister_devises,supprimer_devise,ajouter_devise,modifier_devise
+        BANQUE: afficher_banque,lister_banque,supprimer_banque,ajouter_banque,modifier_banque
+        ALERTE: afficher_alerte,lister_alerte,supprimer_alerte,ajouter_alerte,modifier_alerte
+        MEMBRE: lister_membre,supprimer_membre,ajouter_membre,modifier_membre,activer_desactiver_membre
+        ADSENCE: lister_adsence,afficher_adsence,modifier_adsence,activerDesactiver_adsence
+        CRON: list_cron
+        MENUS: lister_menu,afficher_menu,supprimer_menu,ajouter_menu,modifier_menu
+        CHANGE: lister_change,afficher_change,ajouter_change,supprimer_change,export_change
+        AGENCE: lister_agence,afficher_agence,supprimer_agence,ajouter_agence,modifier_agence
+
+    providers:
+        user_frontend:
+            mongodb: { class: Admin\FrontendUserBundle\Document\FrontendUser, property: username }
+
+    firewalls:
+           # disables authentication for assets and the profiler, adapt it according to your needs
+           dev:
+               pattern: ^/(_(profiler|wdt)|css|images|js)/
+               security: false
+
+           main:
+               anonymous: ~
+               # activate different ways to authenticate
+

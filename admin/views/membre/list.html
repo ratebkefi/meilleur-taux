@@ -1,0 +1,62 @@
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="right">
+                <a ui-sref="dashboard.membreajouter" class="btn orange lighten-2 waves-effect waves-light">Ajouter un
+                    membre</a>
+                <button class="btn orange lighten-2" ng-csv="getArray" csv-header="getHeader()" lazy-load="true"
+                        filename="membres.csv" field-separator=";" add-bom="utf8">Exporter en CSV
+                </button>
+            </div>
+            <table ng-table="membresTable" show-filter="true" class="striped">
+                <tr ng-repeat="membre in data">
+                    <td data-title="'Nom et prénom'" filter="{'nom_prenom':'text'}">
+                        {{membre.nom_prenom}}
+                    </td>
+                    <td data-title="'E-mail'">
+                        {{membre.email}}
+                    </td>                    
+                    <td data-title="'Sexe'" filter="{'sexe': 'text'}">
+                        {{membre.sexe}}
+                    </td>
+                    <td data-title="'Date de naissance'" filter="{'date_naissance': 'text'}">
+                        {{membre.date_naissance| date: "dd/MM/yyyy"}}
+                    </td>
+                    <td>
+                        <div class="switch">
+                            <label for="{{membre.id}}">Désactivé
+                                <input id="{{membre.id}}" ng-model="membre.etat" type="checkbox" name="offshore"
+                                       ng-change="changerEtat(membre)">
+                                <span class="lever"></span>Activé
+                            </label>
+                        </div>
+                    </td>
+                    <td data-title="''">
+                        <a tooltipped ng-click="modifier(membre)"
+                           class="btn-floating orange lighten-2 waves-effect waves-light " data-position="top"
+                           data-tooltip="Modifier"><i class="mdi-image-edit"></i></a>
+                    </td>
+                    <td data-title="''" ng-if="suppression">
+                        <a href='#demoModal{{membre.id}}'
+                           class="btn-floating red darken-1 waves-effect waves-light tooltipped" data-position="top"
+                           data-tooltip="Supprimer" modal><i class="mdi-navigation-close"></i></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div ng-repeat="membre in data">
+    <!-- Modal Structure -->
+    <div id="demoModal{{membre.id}}" class="modal">
+        <div class="modal-content">
+            <h4>Confirmation de suppression</h4>
+            <p>Êtes-vous sûr de vouloir supprimer le membre: "{{membre.nom_prenom}}"</p>
+        </div>
+        <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green btn red">Annuler</a>
+            <a ng-click="supprimer_membre(membre)"
+               class=" modal-action modal-close waves-effect waves-green btn">OK</a>
+        </div>
+    </div>
+</div>

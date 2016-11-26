@@ -1,0 +1,29 @@
+afficher_banque:
+    pattern:  /afficher/{id}
+    defaults: { _controller: ApiBundle:Banque:afficherBanque, _format: json }
+    requirements:
+        _method: GET
+
+lister_banque:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Banque:listerBanque, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_banque:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:Banque:supprimerBanque, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_banque:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Banque:ajouterBanque, _format: json }
+    requirements:
+        _method: POST
+
+modifier_banque:
+    pattern:  /modifier/
+    defaults: { _controller: ApiBundle:Banque:modifierBanque, _format: json }
+    requirements:
+        _method: PUT

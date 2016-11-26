@@ -1,0 +1,20 @@
+lister_adsence:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Adsence:listerAdsence, _format: json }
+    requirements:
+        _method: GET
+afficher_adsence:
+    pattern:  /{id}
+    defaults: { _controller: ApiBundle:Adsence:afficherAdsence:, _format: json }
+    requirements:
+        _method: GET
+modifier_adsence:
+    pattern:  /modifier/
+    defaults: { _controller: ApiBundle:Adsence:modifierAdsence, _format: json }
+    requirements:
+        _method: PUT
+desactiver_adsence:
+    pattern:  /changeretat/{id}
+    defaults: { _controller: ApiBundle:Adsence:activerDesactiverAdsence, _format: json }
+    requirements:
+        _method: GET

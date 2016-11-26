@@ -1,0 +1,29 @@
+afficher_alerte:
+    pattern:  /{id}
+    defaults: { _controller: ApiBundle:Alerte:afficherAlerte, _format: json }
+    requirements:
+        _method: GET
+
+lister_alerte:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Alerte:listerAlerte, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_alerte:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:Alerte:supprimerAlerte, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_alerte:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Alerte:ajouterAlerte, _format: json }
+    requirements:
+        _method: POST
+
+modifier_alerte:
+    pattern:  /modifier/{id}
+    defaults: { _controller: ApiBundle:Alerte:modifierAlerte, _format: json }
+    requirements:
+        _method: PUT

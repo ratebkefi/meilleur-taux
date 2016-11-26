@@ -1,0 +1,75 @@
+<!--Liste des particuliers et configuration-->
+<div ng-controller="devise_list as data">
+    <div class="animated fadeInRight">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="right">
+                    <a ui-sref="dashboard.deviseajouter" class="btn orange lighten-2 waves-effect waves-light"><i
+                            class="mdi-image-edit right"></i>Ajouter une devise</a>
+                </div>
+            </div>
+        </div>
+        <h4 class="header2">Liste des devises</h4>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col s12 m12 l12">
+
+                <div class="table-responsive">
+                    <table class="striped">
+                        <thead>
+                        <tr>
+                            <th>nom {{user}}</th>
+                            <th>Code Iso {{user}}</th>
+                            <th>Sigle {{user}}</th>
+                            <th>Unite {{user}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-show="data.users.length <= 0">
+                            <td colspan="5" style="text-align:center;">Chargement des données...</td>
+                        </tr>
+                        <tr dir-paginate="user in data.users|itemsPerPage:data.itemsPerPage"
+                            total-items="data.total_count">
+                            <td>{{user.nom}}</td>
+                            <td>{{user.code_iso}}</td>
+                            <td>{{user.sigle}}</td>
+                            <td>{{user.unite}}</td>
+                            <td data-title="''">
+                                <a tooltipped ng-click="modifier(user)"
+                                   class="btn-floating orange lighten-2 waves-effect waves-light "
+                                   data-position="top" data-tooltip="Modifier"><i class="mdi-image-edit"></i></a>
+                            </td>
+                            <td>
+                                <a href='#demoModal{{user.id}}'
+                                   class="btn-floating red darken-1 waves-effect waves-light tooltipped"
+                                   data-position="top"
+                                   data-tooltip="Supprimer" modal><i class="mdi-navigation-close"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <dir-pagination-controls
+                            max-size="8"
+                            direction-links="true"
+                            boundary-links="true"
+                            on-page-change="data.getData(newPageNumber)">
+                    </dir-pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-repeat="user in data.users">
+        <!-- Modal Structure -->
+        <div id="demoModal{{user.id}}" class="modal">
+            <div class="modal-content">
+                <h4>Confirmation de suppression</h4>
+                <p>Êtes-vous sûr de vouloir supprimer la Devise: "{{user.nom}}"</p>
+            </div>
+            <div class="modal-footer">
+                <a class=" modal-action modal-close waves-effect waves-green btn orange lighten-2">Annuler</a>
+                <a ng-click="supprimer_devise(user)"
+                   class=" modal-action modal-close waves-effect waves-green btn red darken-1">OK</a>
+            </div>
+        </div>
+    </div>
+</div>

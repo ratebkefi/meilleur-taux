@@ -1,0 +1,124 @@
+<div  class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Nom</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.nom }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Adresse</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.adresse }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Telephone</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.tel }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Faxe</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.fax }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Latitude</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.latitude }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Longitude</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.longitude }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Type</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div ng-if="item.type === true" class="input-field col s12 m9 l9">
+                        <p>DAB</p>
+                    </div>
+                    <div ng-if="item.type === false" class="input-field col s12 m9 l9">
+                        <p>AGENCE</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Banque</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.banque.raison_social }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

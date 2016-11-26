@@ -1,0 +1,36 @@
+lister_change:
+    pattern:  /{itemsPerPage}/{pagenumber}
+    defaults: { _controller: ApiBundle:TauxChange:listerTauxChange, _format: json }
+    requirements:
+        _method: GET
+
+afficher_change:
+    pattern:  /afficher/{id}
+    defaults: { _controller: ApiBundle:TauxChange:afficherTauxChange:, _format: json }
+    requirements:
+        _method: GET
+total_change:
+    pattern:  /total/
+    defaults: { _controller: ApiBundle:TauxChange:total, _format: json }
+    requirements:
+        _method: POST
+ajouter_change:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:TauxChange:ajouterTauxChange, _format: json }
+    requirements:
+        _method: POST
+supprimer_change:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:TauxChange:supprimerTauxChange, _format: json }
+    requirements:
+        _method: DELETE
+export_change:
+    pattern:  /export/{id}
+    defaults: { _controller: ApiBundle:TauxChange:exporterTauxChange, _format: json }
+    requirements:
+        _method: GET
+filtre_change:
+    pattern:  /filtrer/{itemsPerPage}/{pagenumber}
+    defaults: { _controller: ApiBundle:TauxChange:filtrerTauxChange, _format: json }
+    requirements:
+        _method: POST

@@ -1,0 +1,11 @@
+login_user:
+    resource: "@AdminFrontendUserBundle/Resources/config/routing/utilisateurConnexion.yml"
+    prefix:   /
+    
+utilisateur:
+    resource: "@AdminFrontendUserBundle/Resources/config/routing/utilisateur.yml"
+    prefix:   /utilisateur
+    
+groupe:
+    resource: "@AdminFrontendUserBundle/Resources/config/routing/groupe.yml"
+    prefix:   /api/groupe

@@ -1,0 +1,41 @@
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h4 class="header2">Ajout d'une page</h4>
+                <form name="pageForm" ng-submit="ajouter_page(item)">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input ng-model="item.nom" id="nom" name="nom" type="text" class=" form-control" required>
+                            <label for="nom">Nom </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea ui-tinymce="tinymceOptions" ng-model="item.text" id="text" name="text" type="text" class="materialize-textarea form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input ng-model="item.bal_titre" id="titre" name="titre" type="text" class=" form-control" required>
+                            <label for="titre">Titre </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea  ng-model="item.bal_desc" id="desc" name="desc" type="text" class="materialize-textarea form-control"></textarea>
+                            <label for="desc">Description </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="btn waves-effect waves-light">Ajouter</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+afficher_page:
+    pattern:  /{id}
+    defaults: { _controller: ApiBundle:Pages:afficherPages, _format: json }
+    requirements:
+        _method: GET
+
+lister_page:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Pages:listerPages, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_page:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:Pages:supprimerPages, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_page:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Pages:ajouterPages, _format: json }
+    requirements:
+        _method: POST
+
+modifier_page:
+    pattern:  /modifier/{id}
+    defaults: { _controller: ApiBundle:Pages:modifierPages, _format: json }
+    requirements:
+        _method: PUT

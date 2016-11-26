@@ -1,0 +1,227 @@
+<div uploader="uploader" class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h4 class="header2">Ajout une publicite</h4>
+                    <form name="publiciteForm" ng-submit="ajouter_publicite(item)" class="">
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <input ng-model="item.nom" type="text" id="name" name="name" class="validate" required>
+                                <label for="name">Nom</label>
+                            </div>
+                            <div class="file-field input-field col s12 m6 l6">
+                                <div class="btn orange lighten-2">
+                                    <span>Photo</span>
+                                    <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                                    <input type="file" nv-file-select="" uploader="uploader"/><br/>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" id="logo"
+                                           name="logo">
+                                </div>
+                            </div>
+                            <div ng-hide="true">
+                                <div ng-repeat="items in uploader.queue">
+                                    <div ng-if="$last">
+                                        <input ng-model="items.file.name" type="text" name="name"
+                                               ng-init="items.file.name=generate()+'.jpg'">
+                                        <input ng-model="item.photo" type="text" name="name"
+                                               ng-init="item.photo=items.file.name">
+                                        <!-- Image preview -->
+                                        <!--auto height-->
+                                        <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+                                        <!--auto width-->
+                                        <div ng-show="uploader.isHTML5"
+                                             ng-thumb="{ file: items._file, height: 100 }"></div>
+                                        <!--fixed width and height -->
+                                        <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+                                    </div>
+                                    <div ng-if="$last" ng-show="uploader.isHTML5" nowrap>{{
+                                        item.file.size/1024/1024|number:2 }} MB
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div ng-hide="true">
+                                    Queue progress:
+                                    <div class="progress" style="">
+                                        <div class="progress-bar" role="progressbar"
+                                             ng-style="{ 'width': uploader.progress + '%' }"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input ng-hide="true" ng-model="item.photo" type="text" name="name"
+                                   ng-init="item.photo=uploader.queue[uploader.queue.length-1].file.name+'.jpg'">
+                        </div>
+                        <input ng-hide="true" ng-model="item.photo" type="text" name="name"
+                               ng-init="item.photo=uploader.queue[uploader.queue.length-1].file.name+'.jpg'"
+                               class=" form-control">
+
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select">Type :</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field">
+                                        <select class="" ng-model="item.type"
+                                                ng-init="item.type = types[0].type"
+                                                material-select watch>
+                                            <option ng-repeat="value in types" value="{{value.value}}">{{value.type}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select"></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field">
+                                        <input id="max" ng-model="item.max_vu" type="number" name="name" class=" form-control"
+                                               required>
+                                        <label for="max">Max Vu</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+
+                                <input ng-model="item.max_click" id="maxc" type="number" name="name" class="validate"
+                                       required>
+                                <label for="maxc">Max Click</label>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <input id="url" ng-model="item.url" type="url" name="name" class="validate" required>
+                                <label for="url">URL</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select">Ouvrir dans une nouvelle fenêtre :</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field">
+                                        <select class="" ng-model="item.url_blanck"
+                                                ng-init="item.url_blanck = true"
+                                                material-select watch>
+                                            <option value="1">OUI</option>
+                                            <option value="0">NON</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select">Activé :</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field">
+                                        <select class="" ng-model="item.etat"
+                                                ng-init="item.etat = true"
+                                                material-select watch>
+                                            <option value="1">OUI</option>
+                                            <option value="0">NON</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                    <label for="inputCreated">Date Début :</label>
+                                    <input input-date
+                                           type="text"
+                                           name="created"
+                                           id="inputCreated"
+                                           ng-model="item.date_debut"
+                                           container="body"
+                                           format="yyyy/mm/dd"
+                                           required/>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                    <label for="inputCreateds">Date Fin :</label>
+                                    <input input-date
+                                           type="text"
+                                           name="created"
+                                           id="inputCreateds"
+                                           ng-model="item.date_fin"
+                                           container="body"
+                                           format="yyyy/mm/dd"
+                                           required/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button type="submit" class="btn orange lighten-2" ng-click="uploader.uploadAll()"
+                                        ng-disabled="!uploader.getNotUploadedItems().length">Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

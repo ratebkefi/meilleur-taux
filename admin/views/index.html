@@ -1,0 +1,117 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<html class="no-js" lang=""> <!--<![endif]-->
+<body>
+<div id="main">
+    <nav id="header" class="white nav-fixed" role="navigation">
+        <div class="wrap-container">
+            <div class="nav-wrapper">
+                <form ng-submit="logout()">
+                    <ul class="right">
+                        <li><input  type="submit" value="Se déconnecter" class="btn">
+                        </li>
+                    </ul>
+                </form>
+                <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left"
+                   data-closeonclick="false"><i class="mdi-navigation-menu"></i></a>
+                <a id="logo-container" href="#" class=""><img src="src/img/logo.png" class="responsive-img"
+                                                              alt="logo TauxChange"/></a>
+
+            </div>
+        </div>
+    </nav>
+
+    <ul id="nav-mobile" class="side-nav fixed leftside-navigation ps-container ps-active-y side-desktop">
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="10" min-scrollbar-length="20" style="
+    height: 600px;
+    overflow-y: hidden;
+    position: relative;">
+            <li class="user-details orange lighten-2">
+                <div class="row">
+                    <div class="col col s12 m12 l12">
+
+                        <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#">John
+                            Doe</a>
+                        <p class="user-roal">Administrator</p>
+                    </div>
+                </div>
+            </li>
+            <li><a ui-sref=".banque" class="waves-effect waves-light"><i
+                    class="mdi-action-dashboard"></i><span>Banque</span></a></li>
+            <li><a ui-sref=".agence" class="waves-effect waves-light"><i class="mdi-action-account-balance"></i><span>Agence</span></a>
+            </li>
+            <li><a ui-sref=".devise" class="waves-effect waves-light"><i class="mdi-editor-attach-money"></i><span>Devise</span></a>
+            </li>
+            <li><a ui-sref=".change" class="waves-effect waves-light"><i class="mdi-action-trending-up"></i><span>Taux de change</span></a>
+            </li>
+            <li><a ui-sref=".membre" class="waves-effect waves-light"><i class="mdi-social-person-outline"></i><span>Membre</span></a>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion" data-collapsible="accordion" watch>
+                    <li>
+                        <a class="collapsible-header waves-effect waves-light"><i class="mdi-navigation-apps"></i><span>CMS</span></a>
+                        <ul class='collapsible-body'>
+                            <li><a ui-sref=".page" class="waves-effect waves-light">Page</a></li>
+                            <li><a ui-sref=".menu" class="waves-effect waves-light">Menu</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion" data-collapsible="accordion" watch>
+                    <li>
+                        <a class="collapsible-header waves-effect waves-light"><i
+                                class="mdi-notification-vibration"></i><span>Espace pub</span></a>
+                        <ul class='collapsible-body'>
+                            <li><a ui-sref=".adsense" class="waves-effect waves-light">Google Adsence</a></li>
+                            <li><a ui-sref=".publicite" class="waves-effect waves-light">Publicite</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion" data-collapsible="accordion" watch>
+                    <li>
+                        <a class="collapsible-header waves-effect waves-light"><i class="mdi-social-people-outline"></i><span>Permission</span></a>
+                        <ul class='collapsible-body'>
+                            <li><a ui-sref=".utilisateur" class="waves-effect waves-light">Utilisateur</a></li>
+                            <li><a ui-sref=".groupe" class="waves-effect waves-light">Groupe</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href=""><span></span></a></li>
+        </perfect-scrollbar>
+    </ul>
+
+    <div id="main-content">
+        <div class="wrap-container">
+            <div ui-view>
+
+                <h4>Bienvenue à l'interface d'administration de TauxChange.tn</h4></div>
+            <!-- Floating Action Button -->
+        </div>
+    </div>
+    <footer class="page-footer orange lighten-2 fixed">
+        <div class="footer-copyright">
+            <div class="container center">Copyright © 2016 | TauxChange.tn</div>
+        </div>
+    </footer>
+</div>
+<!-- materialize js -->
+
+<script type="text/javascript">
+    //Toast message in load page
+
+</script>
+</body>
+</html>
+
+
+
+

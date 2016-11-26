@@ -1,0 +1,35 @@
+list_change:
+    path:     /changelist
+    defaults: { _controller: FrontBundle:Change:list,  _format: json }
+    requirements:
+       _method: GET
+sim_change:
+    path:     /changesim/{montant}/{operation}/{devise_id}
+    defaults: { _controller: FrontBundle:Change:simulateur,  _format: json }
+    requirements:
+       _method: GET
+list_banque:
+    path:     /banquelist
+    defaults: { _controller: FrontBundle:Banque:list,  _format: json }
+    requirements:
+       _method: GET
+list_agence:
+    path:     /agencelist
+    defaults: { _controller: FrontBundle:Agence:list,  _format: json }
+    requirements:
+       _method: GET
+list_publicites:
+    path:     /publicitelist
+    defaults: { _controller: FrontBundle:Publicite:list,  _format: json }
+    requirements:
+       _method: GET
+random_publicites:
+    path:     /publiciterandom
+    defaults: { _controller: FrontBundle:Publicite:active,  _format: json }
+    requirements:
+       _method: GET
+show_publicite:
+    path:     /publicite/{id}
+    defaults: { _controller: FrontBundle:Publicite:show,  _format: json }
+    requirements:
+       _method: GET

@@ -1,0 +1,182 @@
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Nom</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.nom }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Photo</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p><img src="{{photourl}}{{ item.photo }}" width="100px" height="100px"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Type</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div ng-if="item.type === 1" class="input-field col s12 m9 l9">
+                        <p>Popup (336X280)</p>
+                    </div>
+                    <div ng-if="item.type === 2" class="input-field col s12 m9 l9">
+                        <p>Header (728 X 90)</p>
+                    </div>
+                    <div ng-if="item.type === 3" class="input-field col s12 m9 l9">
+                        <p>Header mobile (320 X 100)</p>
+                    </div>
+                    <div ng-if="item.type === 4" class="input-field col s12 m9 l9">
+                        <p>Footer (728 X 90)</p>
+                    </div>
+                    <div ng-if="item.type === 5" class="input-field col s12 m9 l9">
+                        <p>Footer mobile (320 X 100)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Max vu</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.max_vu }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Max click</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.max_click }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Vu</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.vu }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Click</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.click }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Url</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.url }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">_blank</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+                    <div ng-if="item.url_blanck === true" class="input-field col s12 m9 l9">
+                        <p>OUI</p>
+                    </div>
+                    <div ng-if="item.url_blanck === false" class="input-field col s12 m9 l9">
+                        <p>NON</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Etat</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{item.etat}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Date de début</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.date_debut | date: "dd/MM/yyyy"}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m3 l3">
+                        <div class="bottom-line">
+                            <h4 class="header3">Date de fin</h4>
+                            <span class="line"><em></em></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m9 l9">
+                        <p>{{ item.date_fin | date: "dd/MM/yyyy"}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

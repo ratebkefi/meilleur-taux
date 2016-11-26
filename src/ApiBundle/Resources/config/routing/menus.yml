@@ -1,0 +1,28 @@
+lister_menu:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Menus:listerMenus, _format: json }
+    requirements:
+        _method: GET
+
+afficher_menu:
+    pattern:  /afficher/{id}
+    defaults: { _controller: ApiBundle:Menus:afficherMenus, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_menu:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:Menus:supprimerMenus, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_menu:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Menus:ajouterMenus, _format: json }
+
+
+modifier_menu:
+    pattern:  /modifier/
+    defaults: { _controller: ApiBundle:Menus:modifierMenus, _format: json }
+    requirements:
+        _method: PUT

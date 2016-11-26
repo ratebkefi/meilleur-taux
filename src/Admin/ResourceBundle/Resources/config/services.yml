@@ -1,0 +1,45 @@
+# This file is part of the Admin package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+
+parameters:
+    admin_param_converter.class: Admin\ResourceBundle\Request\ParamConverter
+    admin_exception_listener.class: Admin\ResourceBundle\Request\ExceptionListener
+    admin_node_listener.class: Admin\ResourceBundle\EventListener\NodePersistenceListener
+    admin_annotation_no_duplicates.class: Admin\ResourceBundle\Annotation\Driver\NoDuplicatesDriver
+
+services:
+    api_param_converter:
+        class: %admin_param_converter.class%
+        arguments:
+            - @jms_serializer
+            - @doctrine.odm.mongodb.document_manager
+            - @validator
+            - @event_dispatcher
+        tags:
+            - { name: request.param_converter, converter: api_param_converter }
+
+    admin_exception_listener:
+        class: %admin_exception_listener.class%
+        arguments:
+        tags:
+            - { name: "kernel.event_listener", event: "kernel.exception", method: "onKernelException" }
+
+    admin_node_persistence_listener:
+        class: %admin_node_listener.class%
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: postPersist, method: postPersist }
+            - { name: doctrine_mongodb.odm.event_listener, event: postUpdate, method: postUpdate }
+
+    admin_annotation_no_duplicates:
+        class: %admin_annotation_no_duplicates.class%
+        arguments:
+            - @annotations.reader
+        tags:
+          - { name: doctrine_mongodb.odm.event_listener, event: prePersist, event: prePersist}
+          - { name: doctrine_mongodb.odm.event_listener, event: preUpdate, event: preUpdate}
+

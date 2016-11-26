@@ -1,0 +1,49 @@
+afficher_publicite:
+    pattern:  /{id}
+    defaults: { _controller: ApiBundle:Publicite:afficherPublicite, _format: json }
+    requirements:
+        _method: GET
+        
+lister_publicites:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Publicite:listerPublicites, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_publicite:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:Publicite:supprimerPublicite, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_publicite:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Publicite:ajouterPublicite, _format: json }
+    requirements:
+        _method: POST
+
+modifier_publicite:
+    pattern:  /modifier/
+    defaults: { _controller: ApiBundle:Publicite:modifierPublicite, _format: json }
+    requirements:
+        _method: PUT
+nbr_click_publicite:
+    pattern:  /nbr/{id}
+    defaults: { _controller: ApiBundle:Publicite:nbrClickPublicites, _format: json }
+    requirements:
+        _method: GET
+incr_click_publicite:
+    pattern:  /incr-click/{id}
+    defaults: { _controller: ApiBundle:Publicite:incClickPublicites, _format: json }
+    requirements:
+        _method: PUT
+nbr_vu_publicite:
+    pattern:  /vu/{id}
+    defaults: { _controller: ApiBundle:Publicite:nbrVuPublicites, _format: json }
+    requirements:
+        _method: GET
+incr_vu_publicite:
+    pattern:  /incr-vu/{id}
+    defaults: { _controller: ApiBundle:Publicite:incNbrVuPublicites, _format: json }
+    requirements:
+        _method: PUT

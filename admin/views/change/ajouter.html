@@ -1,0 +1,77 @@
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+        </div>
+        <div class="card-panel">
+            <h4 class="header2">Ajout d'un taux de change</h4>
+            <div class="row">
+                <form name="agenceForm" ng-submit="ajouter_change(item)">
+                    <div class="row">
+                        <div class="input-field col s12 m6 l6">
+                            <input ng-model="item.taux_achat" type="text" id="taux" name="taux" class=" form-control">
+                            <label for="taux">Taux d'achat </label>
+                        </div>
+                        <div class="input-field col s12 m6 l6">
+                            <input ng-model="item.taux_vente" type="text" id="vente" name="vente" class=" form-control">
+                            <label for="vente">Taux de vente </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 l6">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label class=" control-label label-select">Banque :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field">
+
+
+                                    <select name="mySelect" id="mySelect"
+                                            ng-options="option.raison_social for option in itemBanque track by option.raison_social"
+                                            ng-model="item.banques"
+                                            ng-change="item.banque = item.banques.id"
+                                            material-select watch></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label class=" control-label label-select">Devise :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field">
+
+                                    <select name="mySelect2" id="mySelect2"
+                                            ng-options="option.nom for option in itemDevise track by option.nom"
+                                            ng-model="item.devises"
+                                            ng-change="item.devise = item.devises.id"
+                                            material-select watch></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="btn waves-effect waves-light">Ajouter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

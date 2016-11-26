@@ -1,0 +1,9 @@
+list_cron:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Cron:index, _format: json }
+    requirements:
+        _method: GET
+
+add_cron:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Cron:add, _format: json }

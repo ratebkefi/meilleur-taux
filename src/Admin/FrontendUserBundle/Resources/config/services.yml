@@ -1,0 +1,30 @@
+# This file is part of the Admin package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+services:
+    frontend.user.manager:
+        class: Admin\FrontendUserBundle\Manager\UserManager
+        arguments:
+          - @doctrine.odm.mongodb.document_manager
+          - @security.encoder_factory
+          - @security.context
+          - @mailer
+          - @templating
+          - %website_email%
+
+    admin_frontend_user_persistence_listener:
+        class: Admin\FrontendUserBundle\EventListener\UserPersistenceListener
+        arguments:
+            - @security.encoder_factory
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: prePersist }
+    page_load_listener:
+        class: Admin\FrontendUserBundle\EventListener\SecurityListener
+        arguments: [@templating,@router, @security.context]
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+        security.exception_listener.class: BackOffice\UserBundle\Security\Firewall\ExceptionListener

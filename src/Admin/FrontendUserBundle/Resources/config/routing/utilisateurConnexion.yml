@@ -1,0 +1,55 @@
+# This file is part of the Admin package.
+#
+# (c) Ivan Proskuryakov
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+api_admin_user_login:
+    pattern:  /user/login/
+    defaults: { _controller: AdminFrontendUserBundle:Api:login, _format: json }
+    requirements:
+        _method: POST
+
+api_admin_user_logout:
+    pattern:  /user/logout/
+    defaults: { _controller: AdminFrontendUserBundle:Api:logout, _format: json }
+    requirements:
+        _method: GET
+
+api_admin_user_status:
+    pattern:  /user/status/
+    defaults: { _controller: AdminFrontendUserBundle:Api:loginStatus, _format: json }
+    requirements:
+        _method: GET
+
+api_admin_user_password_forgot:
+    pattern:  /user/password/forgot/
+    defaults: { _controller: AdminFrontendUserBundle:Api:passwordForgot, _format: json }
+    requirements:
+        _method: GET
+
+
+api_admin_user_post:
+#    pattern:  /user/register/
+    pattern:  utilisateur/ajouter
+    defaults: { _controller: AdminFrontendUserBundle:Api:register, _format: json }
+    requirements:
+        _method: POST
+
+api_admin_user_put:
+    pattern:  /user/information/
+    defaults: { _controller: AdminFrontendUserBundle:Api:edit, _format: json }
+    requirements:
+        _method: PUT
+
+api_admin_user_get:
+    pattern:  /user/information/
+    defaults: { _controller: AdminFrontendUserBundle:Api:information, _format: json }
+    requirements:
+        _method: GET
+api_test_role:
+    pattern:  /role/test/
+    defaults: { _controller: AdminFrontendUserBundle:Api:testrole, _format: json }
+    requirements:
+        _method: GET

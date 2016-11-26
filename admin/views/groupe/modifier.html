@@ -1,0 +1,44 @@
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                {{item}}
+                <h4 class="header2">modification du groupe: </h4>
+                <form name="utilisateurForm" class="" ng-submit="modifier_groupe(item)">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="nom" ng-model="item.nom" name="nom" class="validate" required>
+                            <label for="nom">Nom du groupe</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h6>ROLE</h6>
+                            <div ng-repeat="(key, value) in itemRole">
+                                <strong>{{key}}</strong>
+                                <ul ng-repeat="(key2, value2) in value">
+                                    <li>
+
+
+                                        <input type="checkbox" id="45{{value2}}"
+                                               ng-checked="searchRole(value2)"
+                                               ng-click="toggleSelection(value2)"
+                                        />
+
+                                        <label for="45{{value2}}">{{value2}}</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="btn orange lighten-2">Modifier
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

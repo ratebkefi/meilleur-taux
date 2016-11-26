@@ -1,0 +1,66 @@
+<!--Liste des particuliers et configuration-->
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="right">
+                <a ui-sref="dashboard.utilisateurajouter" class="btn orange lighten-2 waves-effect waves-light"><i
+                        class="mdi-image-edit right"></i>Ajouter un utilisateur</a>
+            </div>
+        </div>
+    </div>
+    <h4 class="header2">Liste des utilisateurs</h4>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="table-responsive">
+                <table class="striped" ng-table="utilisateursTable" show-filter="false">
+                    <tr ng-repeat="utilisateur in data">
+                        <td data-title="'Nom d\'utilisateur'">
+                            <a ng-click="afficher(utilisateur)">{{utilisateur.username}}</a>
+                        </td>
+                        <td data-title="'Email'">
+                            <div class="input-field col s9">
+                                <p>{{utilisateur.email}}</p>
+                            </div>
+                        </td>
+                        <td data-title="'Etat'">
+                            <div ng-if="utilisateur.enabled === true" class="input-field col s9">
+                                <p>Activé</p>
+                            </div>
+                            <div ng-if="utilisateur.enabled === false" class="input-field col s9">
+                                <p>Désactivé</p>
+                            </div>
+                        </td>
+                        <td data-title="'Groupe'">
+                            <p>{{utilisateur.nomgroupe}}</p>
+                        </td>
+                        <td data-title="''">
+                            <a tooltipped ng-click="modifier(utilisateur)"
+                               class="btn-floating orange lighten-2 waves-effect waves-light " data-position="top"
+                               data-tooltip="Modifier"><i class="mdi-image-edit"></i></a>
+                        </td>
+                        <td data-title="''" ng-if="suppression">
+                            <a href='#demoModal{{utilisateur.id}}'
+                               class="btn-floating red darken-1 waves-effect waves-light tooltipped" data-position="top"
+                               data-tooltip="Supprimer" modal><i class="mdi-navigation-close"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div  ng-repeat="utilisateur in data">
+    <!-- Modal Structure -->
+    <div id="demoModal{{utilisateur.id}}" class="modal">
+        <div class="modal-content">
+            <h4>Confirmation de suppression</h4>
+            <p>Êtes-vous sûr de vouloir supprimer l'utilisateur: {{utilisateur.username}}</p>
+        </div>
+        <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green btn red darken-1">Annuler</a>
+            <a ng-click="supprimer_utilisateur(utilisateur)"
+               class=" modal-action modal-close waves-effect waves-green btn orange lighten-2">OK</a>
+        </div>
+    </div>
+</div>

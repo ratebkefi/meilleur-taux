@@ -1,0 +1,30 @@
+lister_membre:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Membre:listerMembre, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_membre:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:Membre:supprimerMembre, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_membre:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Membre:ajouterMembre, _format: json }
+    requirements:
+        _method: POST
+
+modifier_membre:
+    pattern:  /modifier/
+    defaults: { _controller: ApiBundle:Membre:modifierMembre, _format: json }
+    requirements:
+        _method: PUT
+
+activer_desactiver_membre:
+    pattern:  /activerdesactiver/{id}
+    defaults: { _controller: ApiBundle:Membre:activerDesactiverMembre, _format: json }
+    requirements:
+        _method: GET
+

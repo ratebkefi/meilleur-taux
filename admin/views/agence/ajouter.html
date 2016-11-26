@@ -1,0 +1,155 @@
+<div  uploader="uploader" class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div ng-hide="true">
+            <div ng-hide="true">{{item.banques=itemBanque[0]}}</div>   
+            </div>
+            <div class="card-panel">
+                <h4 class="header2">Ajout d'une Agence</h4>
+
+                    <form name="publiciteForm" ng-submit="ajouter_agence(item)" class="">
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <input ng-model="item.nom" type="text" id="name" name="name" class="validate" required>
+                                <label for="name">Nom</label>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <input ng-model="item.adresse" id="ad" type="text" name="name" class="validate" required>
+                                <label for="ad">Adresse</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <input id="url" ng-model="item.tel" type="number" name="name" class="validate" required>
+                                <label for="url">Tel</label>
+                            </div>
+
+                            <div class="input-field col s12 m6 l6">
+                                <input id="fax" ng-model="item.fax" type="number" name="name" class="validate" required>
+                                <label for="fax">Fax</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+
+                                <input id="lat" ng-model="item.latitude" type="number" ng-pattern="/^[0-9]+([\.,][0-9]+)?$/" step="0.00000000000000001" name="name" class="validate" required>
+                                <label for="lat">Latitude</label>
+                            </div>
+
+                            <div class="input-field col s12 m6 l6">
+
+                                <input id="longitude" ng-model="item.longitude" type="number" ng-pattern="/^[0-9]+([\.,][0-9]+)?$/" step="0.00000000000000001" name="name" class="validate" required>
+                                <label for="longitude">Longitude</label>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div  class="col s12 m6 l6">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select">Type :</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field">
+                                        <select class="" ng-model="item.type"
+                                                ng-init="item.type = true"
+                                                material-select watch >
+                                            <option value="1">DAB</option>
+                                            <option value="0">AGENCE</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div  class="col s12 m6 l6">
+                                <div class="row">
+
+
+                                    <div class="input-field col s12">
+                                        <label class=" control-label label-select">Banque :</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field">
+
+
+
+                                        <select name="mySelect" id="mySelect"
+                                                ng-options="option.raison_social for option in itemBanque track by option.raison_social"
+                                                ng-model="item.banques"
+                                                ng-change="item.banque=item.banques.id"
+
+                                                material-select watch ></select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button type="submit" class="btn orange lighten-2" >Ajouter</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+            </div>   </div>
+    </div>   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

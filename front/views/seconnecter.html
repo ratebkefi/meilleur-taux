@@ -1,0 +1,64 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<html class="no-js" lang=""> <!--<![endif]-->
+<body>
+<div id="main">
+    <div class="login-container">
+        <div id="login-page" class="row animated fadeInRight">
+            <div class="col s12 z-depth-6 card-panel">
+                <form class="login-form" ng-submit="login(item)">
+                    <div class="row">
+                        <div class="input-field col s12 center">
+                            <img src="src/img/logo.png" alt="" class="responsive-img valign profile-image-login">
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input class="validate" id="username" type="text" ng-model="item.username">
+                            <label for="username" data-error="Username non valide" data-success=""
+                                   class="center-align">Nom d'utilisateur</label>
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-lock-outline prefix"></i>
+                            <input id="password" type="password" ng-model="item.password">
+                            <label for="password">Mot de passe</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12  login-text">
+                            <input type="checkbox" id="remember-me"/>
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="btn waves-effect waves-light col s12">Se connecter</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <p class="margin right-align medium-small"><a ui-sref="mot-de-passe-oublie">Mot de passe
+                                oublié?</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- materialize js -->
+<script type="text/javascript">
+    //Toast message in load page
+</script>
+</body>
+</html>

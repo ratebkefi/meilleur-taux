@@ -1,0 +1,353 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<html class="no-js" lang=""> <!--<![endif]-->
+<body>
+<div id="main">
+    <header>
+        <div id="header" class="">
+            <div class="wrap-container">
+                <div class="top">
+                    <a href="#" class="logo-container"><img src="src/img/logo.png" class="responsive-img"
+                                                            alt="logo TauxChange"/></a>
+                    <div class="right">
+                        <a href="#"  alt="Se connecter / S'inscrire" class="btn"><i class="mdi-action-lock"></i>Se connecter / S'inscrire </a>
+                    </div>
+                </div>
+            </div>
+            <div class="date-and-login">
+                <div class="wrap-container">
+                    <div class="right">
+                        <span class="date">vendredi 29 janvier</span> <span class="date" id="time">15:46</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-wrapper white" role="navigation">
+            <div class="nav-container">
+                    <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left"
+                       data-closeonclick="false"><i class="mdi-navigation-menu"></i></a>
+                    <ul id="nav-mobile" class="white">
+                        <li><a class="waves-effect waves-light" ui-sref="index"><i class="mdi-action-home"></i></a></li>
+                        <li ng-class="{active: activetab=='/banque_agence'}"><a ui-sref="banque_agence" class="waves-effect waves-light"><span>Banque & Agence</span></a></li>
+                        <li><a class="waves-effect waves-light"><span>Simulateur de devise</span></a></li>
+                        <li><a href="#" class="waves-effect waves-light"><span>Historique & Analyse</span></a></li>
+                        <li><a href="#" class="waves-effect waves-light"><span>Contact</span></a></li>
+                        <li><a href="#" class="waves-effect waves-light"><span>Blog</span></a></li>
+                    </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="main-content">
+        <div class="wrap-container">
+            <div ui-view>
+                <!-- header banner -->
+                <div class="row hidden-xs">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="banner">
+                            <button id="banner" class="close" onclick="hidethisadds(34)" type="button">
+                                <span aria-hidden="true" class="mdi-navigation-close"></span>
+                            </button>
+                            <a href="#" target="_blank"><img src="src/img/banner.jpg" class="banner img-responsive col l12 m12 s12"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contents -->
+                 <div class="row">
+                     <div class="col l4 m4 s12">
+                         <div class="card">
+                             <div class="card-image">
+                                 <div class="slider" slider>
+                                     <ul class="slides">
+                                         <li>
+                                             <img src="src/img/bt.jpg"> <!-- random image -->
+                                         </li>
+                                         <li>
+                                             <img src="src/img/biat.jpg"> <!-- random image -->
+                                         </li>
+                                         <li>
+                                             <img src="src/img/zitouna.jpg"> <!-- random image -->
+                                         </li>
+                                         <li>
+                                             <img src="src/img/albaraka.jpg"> <!-- random image -->
+                                         </li>
+                                         <li>
+                                             <img src="src/img/uib.jpg"> <!-- random image -->
+                                         </li>
+
+                                     </ul>
+                                 </div>
+                             </div>
+
+                             <div class="card-action">
+                                 <a href="#" class="right">Toutes les banques <i class="mdi-hardware-keyboard-arrow-right"></i> </a>
+                             </div>
+                         </div>
+                         <div class="card">
+                             <div class="card-image">
+                                 <div class="slider" slider>
+                                     <ul class="slides">
+                                         <li>
+                                             <img src="http://lorempixel.com/250/250/nature/1"> <!-- random image -->
+                                             <div class="caption">
+                                                 <h4 class="header1">Lorem ipsum dolor sit!</h4>
+                                                 <h5 class="light grey-text text-lighten-3">12/02/2016</h5>
+                                             </div>
+                                         </li>
+                                         <li>
+                                             <img src="http://lorempixel.com/250/250/nature/2"> <!-- random image -->
+                                             <div class="caption">
+                                                 <h4 class="header1">Lorem ipsum dolor sit</h4>
+                                                 <h5 class="light grey-text text-lighten-3">10/01/2016</h5>
+                                             </div>
+                                         </li>
+                                         <li>
+                                             <img src="http://lorempixel.com/250/250/nature/3"> <!-- random image -->
+                                             <div class="caption">
+                                                 <h4 class="header1">Lorem ipsum dolor sit</h4>
+                                                 <h5 class="light grey-text text-lighten-3">22/01/2016</h5>
+                                             </div>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </div>
+
+                             <div class="card-action">
+                                 <a href="#" class="right">Tous les articles <i class="mdi-hardware-keyboard-arrow-right"></i> </a>
+                             </div>
+                         </div>
+                         <!-- Buttons -->
+                         <a href="#" class="btn btn-large right waves-effect waves-light">
+                             <span class="left title">Je part en voyage</span>
+                             <span class="right mdi-maps-flight icon"><span class="slant-right"></span></span>
+                         </a>
+                         <a href="#" class="btn btn-large left waves-effect waves-light">
+                             <span class="left mdi-maps-flight icon"><span class="slant-left"></span></span>
+                             <span class="right title">Je reviens d'un voyage</span>
+                         </a>
+                         <!-- End Buttons -->
+                     </div>
+
+                     <div class="col l8 m8 s12">
+                         <div class="bottom-line">
+                             <h4 class="header2">LES BANQUES VENDENT</h4>
+                             <span class="line"><em></em></span>
+                         </div>
+                         <div class="table-responsive">
+                             <table class="striped">
+                                 <thead>
+                                 <tr>
+                                     <th scope="col">Banque</th>
+                                     <th scope="col">USD</th>
+                                     <th scope="col">EUR</th>
+                                     <th class=""></th>
+                                 </tr>
+                                 </thead>
+                                 <tbody>
+
+                                 <tr>
+                                     <td><strong> Banque Tunisie</strong></td>
+                                     <td><strong> 1 USD = 1.4200 <abbr title="Dollar Canadien">TND</abbr></strong></td>
+                                     <td><strong> 1 EUR = 1.5700 <abbr title="Dollar Canadien">TND</abbr></strong></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> STB</td>
+                                     <td> 1 USD = 1.4366 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5944 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> BIAT</td>
+                                     <td> 1 USD = 1.4416 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5811 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> Attijari</td>
+                                     <td> 1 USD = 1.4336 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5981 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> Zitouna</td>
+                                     <td> 1 USD = 1.4340 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5837 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> UIB</td>
+                                     <td> 1 USD = 1.4460 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5989 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> Baraka</td>
+                                     <td> 1 USD = 1.4380 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5795 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 </tbody>
+
+                             </table>
+                         </div>
+
+                         <div class="bottom-line">
+                             <h4 class="header2">LES BANQUES ACHÈTENT</h4>
+                             <span class="line"><em></em></span>
+                         </div>
+                         <div class="table-responsive">
+                             <table class="striped">
+                                 <thead>
+                                 <tr>
+                                     <th scope="col">Banque</th>
+                                     <th scope="col">USD</th>
+                                     <th scope="col">EUR</th>
+                                     <th class=""></th>
+                                 </tr>
+                                 </thead>
+                                 <tbody>
+
+                                 <tr>
+                                     <td><strong> Banque Tunisie</strong></td>
+                                     <td><strong> 1 USD = 1.4200 <abbr title="Dollar Canadien">TND</abbr></strong></td>
+                                     <td><strong> 1 EUR = 1.5700 <abbr title="Dollar Canadien">TND</abbr></strong></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> STB</td>
+                                     <td> 1 USD = 1.4366 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5944 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> BIAT</td>
+                                     <td> 1 USD = 1.4416 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5811 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> Attijari</td>
+                                     <td> 1 USD = 1.4336 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5981 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> Zitouna</td>
+                                     <td> 1 USD = 1.4340 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5837 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> UIB</td>
+                                     <td> 1 USD = 1.4460 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5989 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td> Baraka</td>
+                                     <td> 1 USD = 1.4380 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td> 1 EUR = 1.5795 <abbr title="Dollar Canadien">TND</abbr></td>
+                                     <td class="">
+                                     </td>
+                                 </tr>
+                                 </tbody>
+
+                             </table>
+                         </div>
+                     </div>
+                 </div>
+                <!-- / end contents -->
+
+                <!-- footer banner -->
+                <div class="row hidden-xs">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="banner">
+                            <button id="footerBanner" class="close" onclick="hidethisadds(34)" type="button">
+                                <span aria-hidden="true" class="mdi-navigation-close"></span>
+                            </button>
+                            <a href="#" target="_blank"><img src="src/img/banner.jpg" class="banner img-responsive col l12 m12 s12"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Floating Action Button -->
+        </div>
+    </div>
+    <footer class="page-footer grey darken-4 clearfix">
+        <div class="wrap-container row">
+            <div class="col s12 m4 l4 left left-align">
+                <a href="#" class="logo-container"><img src="src/img/footer-logo.png" class="responsive-img"
+                                                              alt="logo TauxChange"/></a>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora illo odio ducimus voluptas dicta, mollitia omnis reiciendis architecto nisi sunt cumque accusantium incidunt eveniet.
+                </p>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="bottom-line">
+                    <h4 class="header2">Liens utiles</h4>
+                    <span class="line"><em></em></span>
+                </div>
+                <ul>
+                    <!--  1ère ligne -->
+                    <li>
+                        <a href="#" title="Banque & Agence">Banque & Agence</a>
+                    </li>
+                    <li><a href="#" title="Simulateur de devise">Simulateur de devise</a></li>
+                    <li></li>
+                    <li><a href="#" title="Historique & Analyse">Historique & Analyse</a>  </li>
+                    <li><a href="#" title="Conditions Générales">Conditions Générales</a></li>
+                    <li><a href="#" title="Plan du site">Plan du site</a></li>
+                    <li><a href="#" title="Blog">Blog</a></li>
+                    <li><a href="#" title="Contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="bottom-line">
+                    <h4 class="header2">Nous suivre</h4>
+                    <span class="line"><em></em></span>
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="#" class="main-theme-color mr15" target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="main-theme-color mr15" target="_blank"><i class="fa fa-google-plus"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright black">
+            <div class="wrap-container center">Copyright © 2016 | TauxChange.tn</div>
+        </div>
+    </footer>
+</div>
+<!-- materialize js -->
+
+<script type="text/javascript">
+    //Toast message in load page
+
+</script>
+</body>
+</html>
+
+
+
+

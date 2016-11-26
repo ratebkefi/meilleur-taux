@@ -1,0 +1,30 @@
+afficher_utilisateur:
+    pattern:  /afficher/{id}
+    defaults: { _controller: AdminFrontendUserBundle:Utilisateur:afficherUtilisateur, _format: json }
+    requirements:
+        _method: GET
+        
+lister_utilisateurs:
+    pattern:  /
+    defaults: { _controller: AdminFrontendUserBundle:Utilisateur:listerUtilisateurs, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_utilisateur:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: AdminFrontendUserBundle:Utilisateur:supprimerUtilisateur, _format: json }
+    requirements:
+        _method: DELETE
+
+#ajouter_utilisateur:
+ #   pattern:  /ajouter
+  #  defaults: { _controller: AdminFrontendUserBundle:Utilisateur:ajouterUtilisateur, _format: json }
+   # requirements:
+    #    _method: POST
+
+modifier_utilisateur:
+    pattern:  /modifier/
+    defaults: { _controller: AdminFrontendUserBundle:Utilisateur:modifierUtilisateur, _format: json }
+    requirements:
+        _method: PUT
+        

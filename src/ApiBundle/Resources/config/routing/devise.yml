@@ -1,0 +1,39 @@
+afficher_devise:
+    pattern:  /afficher/{id}
+    defaults: { _controller: ApiBundle:Devise:afficherDevise, _format: json }
+    requirements:
+        _method: GET
+        
+lister_devises:
+    pattern:  /{itemsPerPage}/{pagenumber}
+    defaults: { _controller: ApiBundle:Devise:listerDevises, _format: json }
+    requirements:
+        _method: GET
+liste_devises_total:
+    pattern:  /list/
+    defaults: { _controller: ApiBundle:Devise:listerTotalDevises, _format: json }
+    requirements:
+        _method: GET
+total_devises:
+    pattern:  /total/
+    defaults: { _controller: ApiBundle:Devise:total, _format: json }
+    requirements:
+        _method: GET
+supprimer_devise:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:Devise:supprimerDevise, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_devise:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Devise:ajouterDevise, _format: json }
+    requirements:
+        _method: POST
+
+modifier_devise:
+    pattern:  /modifier/
+    defaults: { _controller: ApiBundle:Devise:modifierDevise, _format: json }
+    requirements:
+        _method: PUT
+        

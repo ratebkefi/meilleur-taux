@@ -1,0 +1,88 @@
+<!--Liste des particuliers et configuration-->
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="right">
+                <a ui-sref="dashboard.pageajouter" class="btn waves-effect waves-light"><i
+                        class="mdi-image-edit right"></i>Ajouter Page</a>
+            </div>
+        </div>
+    </div>
+    <h4 class="header2">Liste des pages</h4>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="table-responsive">
+                <table ng-table="usersTable" show-filter="true" class="striped">
+                    <tr ng-repeat="page in data">
+                        <td data-title="'nom'" sortable="'nom'" filter="{ 'nom': 'text' }">
+                            <a href="" ng-click="afficher_page(page)">{{page.nom}}</a>
+                        </td>
+                        <td data-title="'Titre'" sortable="'bal_titre'">
+                            {{page.bal_titre}}
+                        </td>
+                        <td data-title="'Description'" sortable="'bal_desc'">
+                            {{page.bal_desc}}
+                        </td>
+                        <td>
+                            <a tooltipped ng-click="modifier_page(page)"
+                               class="btn-floating btn waves-effect waves-light "
+                               data-position="top" data-tooltip="Modifier"><i class="mdi-image-edit"></i></a>
+                        </td>
+                        <td ng-if="suppression">
+                            <a href='#demoModal{{page.id}}'
+                               class="btn-floating red darken-1 waves-effect waves-light tooltipped" data-position="top"
+                               data-tooltip="Supprimer" modal><i class="mdi-navigation-close"></i></a>
+
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div ng-repeat="page in data">
+    <!-- Modal Structure -->
+    <div id="demoModal{{page.id}}" class="modal">
+        <div class="modal-content">
+            <h4>Confirmation de suppression</h4>
+            <p>Êtes-vous sûr de vouloir supprimer la page: "{{page.nom}}"</p>
+        </div>
+        <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green btn red darken-1">Annuler</a>
+            <a ng-click="supprimer_page(page)"
+               class=" modal-action modal-close waves-effect waves-green btn">OK</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

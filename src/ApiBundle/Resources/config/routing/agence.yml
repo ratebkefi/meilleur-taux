@@ -1,0 +1,29 @@
+lister_agence:
+    pattern:  /
+    defaults: { _controller: ApiBundle:Agence:listerAgences, _format: json }
+    requirements:
+        _method: GET
+
+afficher_agence:
+    pattern:  /afficher/{id}
+    defaults: { _controller: ApiBundle:Agence:afficherAgence, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_agence:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: ApiBundle:Agence:supprimerAgence, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_agence:
+    pattern:  /ajouter
+    defaults: { _controller: ApiBundle:Agence:ajouterAgence, _format: json }
+    requirements:
+        _method: POST
+
+modifier_agence:
+    pattern:  /modifier/
+    defaults: { _controller: ApiBundle:Agence:modifierAgence, _format: json }
+    requirements:
+        _method: PUT

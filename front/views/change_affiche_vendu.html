@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col l8 m12 s12">
+    <div class="bottom-line">
+        <h4 class="header2">{{item.raison_social}}</h4>
+        <span class="line"><em></em></span>
+    </div>
+    <div class="table-responsive">
+        <table class="striped" ng-table="tauxTable">
+            <thead>
+            <tr>
+                <th>Devise</th>
+                <th>Taux Vente </th>
+            </tr>
+            </thead>
+            <tr>
+                <td>
+                    DOLLAR DES USA
+                </td>
+                <td>
+                    {{item.taux_vente_usd}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    EURO
+                </td>
+                <td >
+                    {{item.taux_vente_eur}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    RYAL SAOUDIEN
+                </td>
+                <td >
+                    {{item.taux_vente_sar}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    DOLLAR CANADIEN
+                </td>
+                <td >
+                    {{item.taux_vente_cad}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    COURONNE DANOISE
+                </td>
+                <td >
+                    {{item.taux_vente_dkk}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    LIVRE STERLING
+                </td>
+                <td >
+                    {{item.taux_vente_gbp}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    YEN JAPONAIS
+                </td>
+                <td >
+                    {{item.taux_vente_jpy}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    COURONNE NORVEGIENNE
+                </td>
+                <td >
+                    {{item.taux_vente_nok}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    COURONNE SUEDOISE
+                </td>
+                <td >
+                    {{item.taux_vente_sek}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    FRANC SUISSE
+                </td>
+                <td >
+                    {{item.taux_vente_chf}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    DINAR KOWEITIEN
+                </td>
+                <td >
+                    {{item.taux_vente_kwd}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    DIRHAM DES EAU
+                </td>
+                <td >
+                    {{item.taux_vente_aed}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    DINAR LIBYEN
+                </td>
+                <td >
+                    {{item.taux_vente_lyd}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    DINAR DE BAHREIN
+                </td>
+                <td >
+                    {{item.taux_vente_bhd}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    RYAL QUATARI
+                </td>
+                <td >
+                    {{item.taux_vente_qar}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

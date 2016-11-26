@@ -1,0 +1,36 @@
+afficher_groupe:
+    pattern:  /afficher/{id}
+    defaults: { _controller: AdminFrontendUserBundle:Groupe:afficherGroupe, _format: json }
+    requirements:
+        _method: GET
+        
+lister_groupes:
+    pattern:  /
+    defaults: { _controller: AdminFrontendUserBundle:Groupe:listerGroupes, _format: json }
+    requirements:
+        _method: GET
+
+lister_roles:
+    pattern:  /listRole
+    defaults: { _controller: AdminFrontendUserBundle:Groupe:listerroles, _format: json }
+    requirements:
+        _method: GET
+
+supprimer_groupe:
+    pattern:  /supprimer/{id}
+    defaults: { _controller: AdminFrontendUserBundle:Groupe:supprimerGroupe, _format: json }
+    requirements:
+        _method: DELETE
+
+ajouter_groupe:
+    pattern:  /ajouter
+    defaults: { _controller: AdminFrontendUserBundle:Groupe:ajouterGroupe, _format: json }
+    requirements:
+        _method: POST
+
+modifier_groupe:
+    pattern:  /modifier/
+    defaults: { _controller: AdminFrontendUserBundle:Groupe:modifierGroupe, _format: json }
+    requirements:
+        _method: PUT
+        

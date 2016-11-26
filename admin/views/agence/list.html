@@ -1,0 +1,61 @@
+<!--Liste des particuliers et configuration-->
+<div class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="right">
+                <a ui-sref="dashboard.agenceajouter" class="btn orange lighten-2 waves-effect waves-light"><i
+                        class="mdi-image-edit right"></i>Ajouter Agence</a>
+            </div>
+        </div>
+    </div>
+    <h4 class="header2">Liste des Agences</h4>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="table-responsive">
+                <table class="striped" ng-table="agencesTable" show-filter="true">
+                    <tr ng-repeat="agence in data">
+                        <td data-title="'nom'">
+                            <a ng-click="afficher(agence)">{{agence.nom}}</a>
+                        </td>
+                        <td data-title="'Type'" filter="{ 'type': 'select' }" filter-data="Type(agence)">
+                            <div ng-if="agence.type === true" class="input-field col s9">
+                                <p>DAB</p>
+                            </div>
+                            <div ng-if="agence.type === false" class="input-field col s9">
+                                <p>Agence</p>
+                            </div>
+                        </td>
+                        <td data-title="'Banque'" filter="{ 'nombanque': 'text' }">
+                            {{agence.nombanque}}
+                        </td>
+                        <td data-title="''">
+                            <a tooltipped ng-click="modifier(agence)"
+                               class="btn-floating orange lighten-2 waves-effect waves-light " data-position="top"
+                               data-tooltip="Modifier"><i class="mdi-image-edit"></i></a>
+                        </td>
+                        <td data-title="''" >
+                            <a href='#demoModal{{agence.id}}'
+                               class="btn-floating red darken-1 waves-effect waves-light tooltipped" data-position="top"
+                               data-tooltip="Supprimer" modal><i class="mdi-navigation-close"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-repeat="agence in data">
+    <!-- Modal Structure -->
+    <div id="demoModal{{agence.id}}" class="modal">
+        <div class="modal-content">
+            <h4>Confirmation de suppression</h4>
+            <p>Êtes-vous sûr de vouloir supprimer l'agence: "{{agence.nom}}"</p>
+        </div>
+        <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green btn red darken-1">Annuler</a>
+            <a ng-click="supprimer_agence(agence)"
+               class=" modal-action modal-close waves-effect waves-green btn orange lighten-2">OK</a>
+        </div>
+    </div>
+</div>

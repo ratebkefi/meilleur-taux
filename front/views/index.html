@@ -1,0 +1,283 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<html class="no-js" lang=""> <!--<![endif]-->
+<body>
+<div id="main">
+    <header>
+        <div id="header" class="">
+            <div class="wrap-container">
+                <div class="top">
+                    <a href="#" class="logo-container"><img src="src/img/logo.png" class="responsive-img" alt="logo TauxChange"/></a>
+                    <div class="right">
+                        <a href="#" ng-if="!stateUser" alt="Se connecter" class="btn" ng-click="login()">Se connecter </a>
+                        <a href="#" ng-if="stateUser" alt="Se connecter" class="btn" ng-click="logout()">Se Déconnecter </a>
+                        <a ui-sref=".utilisateurajouter" ng-if="!stateUser" alt="S'inscrire" class="btn">S'inscrire </a>
+                    </div>
+                </div>
+            </div>
+            <div class="date-and-login">
+                <div class="wrap-container">
+                    <div class="right">
+                        <span class="date">{{dateOut | date: 'fullDate'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-wrapper white" role="navigation">
+            <div class="nav-container">
+                    <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left"
+                       data-closeonclick="false"><i class="mdi-navigation-menu"></i></a>
+                    <ul id="nav-mobile" class="white">
+                        <li ng-class="{active: activetab=='/index'}"><a ui-sref="index" class="waves-effect waves-light"><i class="mdi-action-home"></i></a></li>
+                        <li><a ui-sref=".banque_agence" class="waves-effect waves-light"><span>Banque & Agence</span></a></li>
+                        <li><a ui-sref=".simulateur" href="#" class="waves-effect waves-light"><span>Simulateur de devise</span></a></li>
+                        <li><a href="#" class="waves-effect waves-light"><span>Historique & Analyse</span></a></li>
+                        <li><a href="#" class="waves-effect waves-light"><span>Contact</span></a></li>
+                        <li><a href="#" class="waves-effect waves-light"><span>Blog</span></a></li>
+                    </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="main-content">
+        <div class="wrap-container">
+            <div ui-view>
+                {{}}
+                <!-- header banner -->
+                <div class="row hidden-xs">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="banner">
+                            <button id="banner" class="close" onclick="hidethisadds(34)" type="button">
+                                <span aria-hidden="true" class="mdi-navigation-close"></span>
+                            </button>
+                            <a ng-href="{{ imagerandom1.url }}" target="_blank"><img ng-src="{{ photoUrl+imagerandom1.photo}}" class="banner img-responsive col l12 m12 s12"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contents -->
+                 <div class="row">
+                     <div class="col l4 m4 s12">
+                         <div class="card">
+                             <div class="card-image">
+
+                                 <div class="slider" slider>
+                                     <ul class="slides" >
+
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[0].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[1].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[2].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[3].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[4].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[5].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[6].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[7].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[8].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[9].logo}}" >
+                                         </li>
+                                         <li>
+                                             <img ng-src="{{photoUrl+banques[10].logo}}" >
+                                         </li>
+
+                                     </ul>
+                                 </div>
+                             </div>
+                             <div class="card-action">
+                                 <a href="#" class="right">Toutes les banques <i class="mdi-hardware-keyboard-arrow-right"></i> </a>
+                             </div>
+                         </div>
+                         <div class="card">
+                             <div class="card-image">
+                                 <div class="slider" slider>
+                                     <ul class="slides">
+                                         <li>
+                                             <img src="http://lorempixel.com/250/250/nature/1"> <!-- random image -->
+                                             <div class="caption">
+                                                 <h4 class="header1">Lorem ipsum dolor sit!</h4>
+                                                 <h5 class="light grey-text text-lighten-3">12/02/2016</h5>
+                                             </div>
+                                         </li>
+                                         <li>
+                                             <img src="http://lorempixel.com/250/250/nature/2"> <!-- random image -->
+                                             <div class="caption">
+                                                 <h4 class="header1">Lorem ipsum dolor sit</h4>
+                                                 <h5 class="light grey-text text-lighten-3">10/01/2016</h5>
+                                             </div>
+                                         </li>
+                                         <li>
+                                             <img src="http://lorempixel.com/250/250/nature/3"> <!-- random image -->
+                                             <div class="caption">
+                                                 <h4 class="header1">Lorem ipsum dolor sit</h4>
+                                                 <h5 class="light grey-text text-lighten-3">22/01/2016</h5>
+                                             </div>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </div>
+                             <div class="card-action">
+                                 <a href="#" class="right">Tous les articles <i class="mdi-hardware-keyboard-arrow-right"></i> </a>
+                             </div>
+                         </div>
+                         <!-- Buttons -->
+                         <a href="#" class="btn btn-large right waves-effect waves-light">
+                             <span class="left title">Je part en voyage</span>
+                             <span class="right mdi-maps-flight icon"><span class="slant-right"></span></span>
+                         </a>
+                         <a href="#" class="btn btn-large left waves-effect waves-light">
+                             <span class="left mdi-maps-flight icon"><span class="slant-left"></span></span>
+                             <span class="right title">Je reviens d'un voyage</span>
+                         </a>
+                         <!-- End Buttons -->
+                     </div>
+                     <div class="col l8 m8 s12">
+                         <div class="bottom-line">
+                             <h4 class="header2">LES BANQUES VENDENT</h4>
+                             <span class="line"><em></em></span>
+                         </div>
+                         <div class="table-responsive">
+                             <table class="striped" ng-table="tauxTable">
+                                 <tr ng-repeat="tauxvente in data">
+                                     <td data-title="'Banque'" sortable="'raison_social'" >
+                                         {{tauxvente.raison_social}}
+                                     </td>
+                                     <td data-title="'Dollar'" sortable="'taux_vente_d'">
+                                         {{tauxvente.taux_vente_usd}}
+                                     </td>
+                                     <td data-title="'Euro'" sortable="'taux_vente_e'">
+                                         {{tauxvente.taux_vente_eur}}
+                                     </td>
+                                     <td data-title="''">
+                                         <a tooltipped ng-click="afficher_vendu(tauxvente)"
+                                            class="btn-floating orange lighten-2 waves-effect waves-light "
+                                            data-position="top" data-tooltip="Afficher"><i class="mdi-action-assignment"></i></a>
+                                     </td>
+                                 </tr>
+                             </table>
+                         </div>
+                     </div>
+                     <div class="col l8 m8 s12">
+                         <div class="bottom-line">
+                             <h4 class="header2">LES BANQUES ACHÈTENT</h4>
+                             <span class="line"><em></em></span>
+                         </div>
+                         <div class="table-responsive">
+                             <table class="striped" ng-table="tauxTable">
+                                 <tr ng-repeat="tauxachat in data">
+                                     <td data-title="'Banque'" sortable="'raison_social'">
+                                         {{tauxachat.raison_social}}
+                                     </td>
+                                     <td data-title="'Dollar'" sortable="'taux_achat_d'">
+                                         {{tauxachat.taux_achat_usd}}
+                                     </td>
+                                     <td data-title="'Euro'" sortable="'taux_achat_e'">
+                                         {{tauxachat.taux_achat_eur}}
+                                     </td>
+                                     <td data-title="''">
+                                         <a tooltipped ng-click="afficher_achete(tauxachat)"
+                                            class="btn-floating orange lighten-2 waves-effect waves-light "
+                                            data-position="top" data-tooltip="Afficher"><i class="mdi-action-assignment"></i></a>
+                                     </td>
+                                 </tr>
+                             </table>
+                         </div>
+                     </div>
+
+
+                 </div>
+                <!-- / end contents -->
+                <!-- footer banner -->
+                <div class="row hidden-xs">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="banner">
+                            <button id="footerBanner" class="close" onclick="hidethisadds(34)" type="button">
+                                <span aria-hidden="true" class="mdi-navigation-close"></span>
+                            </button>
+                            <a ng-href="{{ imagerandom2.url }}" target="_blank"><img ng-src="{{ photoUrl+imagerandom2.photo}}" class="banner img-responsive col l12 m12 s12"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Floating Action Button -->
+        </div>
+    </div>
+    <footer class="page-footer grey darken-4 clearfix">
+        <div class="wrap-container row">
+            <div class="col s12 m4 l4 left left-align">
+                <a href="#" class="logo-container"><img src="src/img/footer-logo.png" class="responsive-img"
+                                                              alt="logo TauxChange"/></a>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora illo odio ducimus voluptas dicta, mollitia omnis reiciendis architecto nisi sunt cumque accusantium incidunt eveniet.
+                </p>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="bottom-line">
+                    <h4 class="header2">Liens utiles</h4>
+                    <span class="line"><em></em></span>
+                </div>
+                <ul>
+                    <!--  1ère ligne -->
+                    <li>
+                        <a href="#" title="Banque & Agence">Banque & Agence</a>
+                    </li>
+                    <li><a href="#" title="Simulateur de devise">Simulateur de devise</a></li>
+                    <li></li>
+                    <li><a href="#" title="Historique & Analyse">Historique & Analyse</a>  </li>
+                    <li><a href="#" title="Conditions Générales">Conditions Générales</a></li>
+                    <li><a href="#" title="Plan du site">Plan du site</a></li>
+                    <li><a href="#" title="Blog">Blog</a></li>
+                    <li><a href="#" title="Contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="bottom-line">
+                    <h4 class="header2">Nous suivre</h4>
+                    <span class="line"><em></em></span>
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="#" class="main-theme-color mr15" target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="main-theme-color mr15" target="_blank"><i class="fa fa-google-plus"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright black">
+            <div class="wrap-container center">Copyright © 2016 | TauxChange.tn</div>
+        </div>
+    </footer>
+</div>
+<!-- materialize js -->
+<script type="text/javascript">
+    //Toast message in load page
+
+</script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,172 @@
+<!--Liste des particuliers et configuration-->
+<div class="animated fadeInRight" ng-controller="change_list as data">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="right">
+                <a ui-sref="dashboard.changeajouter" class="btn waves-effect waves-light"><i
+                        class="mdi-image-edit right"></i>Ajouter un taux de change</a>
+            </div>
+        </div>
+    </div>
+    <h4 class="header2">Liste des changes</h4>
+    <div class="divider"></div>
+    <form name="agenceForm" ng-submit="data.getData(newPageNumber,item)">
+
+        <div class="row">
+            <div class="input-field col s12 m4 l4">
+                <div class="row">
+                    <div class="col s12"></div>
+                </div>
+                <label for="datedebut">De</label>
+                <input id="datedebut" input-date type="text" container="body" format="dd/mm/yyyy"
+                       name="from"
+                       ng-model="item.date_debut">
+            </div>
+            <div class="input-field col s12 m4 l4">
+                <div class="row">
+                    <div class="col s12"></div>
+                </div>
+                <label for="datefin">à</label>
+                <input id="datefin" input-date name="created" container="body" format="dd/mm/yyyy"
+                       type="text"
+                       class="form-control" name="to" ng-model="item.date_fin">
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label class=" control-label label-select">Trier par :</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <select class="" ng-model="item.trie" material-select
+                                watch>
+                            <option value="date">Date (DESC)</option>
+                            <option value="vente_asc">Taux de vente (ASC)</option>
+                            <option value="vente_desc">Taux de vente (DESC)</option>
+                            <option value="achat_asc">Taux d'achat (ASC)</option>
+                            <option value="achat_desc">Taux d'achat (DESC)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 l4">
+                <div class="row">
+
+
+                    <div class="input-field col s12">
+                        <label class=" control-label label-select">Banque :</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <div ng-hide="true">{{item.banque}}</div>
+
+                        <select name="mySelect" id="mySelect2"
+                                ng-options="option.raison_social for option in itemBanque track by option.raison_social"
+                                ng-model="item.banque"
+                                material-select watch></select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="row">
+
+
+                    <div class="input-field col s12">
+                        <label class=" control-label label-select">Devise :</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <div ng-hide="true">{{item.devise}}</div>
+
+                        <select name="mySelect" id="mySelect"
+                                ng-options="option.nom for option in itemDevise track by option.nom"
+                                ng-model="item.devise"
+                                material-select watch></select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="row">
+
+
+                    <div class="input-field col s12">
+                        <label class=" control-label label-select">Type de mise à jour :</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <select class="" ng-model="item.type" ng-init="item.type = true" material-select
+                                watch>
+                            <option value="null"></option>
+                            <option value="false">Manuelle</option>
+                            <option value="true">Automatique</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <button type="submit" class="btn waves-effect waves-light">Filtrer</button>
+            </div>
+        </div>
+    </form>
+
+
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="table-responsive">
+                <table class="striped">
+                    <thead>
+                    <tr>
+                        <th>Banque</th>
+                        <th>Devise</th>
+                        <th>Date</th>
+                        <th>Unité</th>
+                        <th>Taux d'achat</th>
+                        <th>Taux de vente</th>
+                        <th>Type de mise à jour</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr dir-paginate="user in data.users|itemsPerPage:data.itemsPerPage" total-items="data.total_count">
+                        <td>{{user.banque.raison_social}}</td>
+                        <td>{{user.devise.nom}}</td>
+                        <td>{{user.date_time | date:'dd/MM/yyyy à HH:mm'}}</td>
+                        <td>{{user.devise.unite}}</td>
+                        <td>{{user.taux_achat}}</td>
+                        <td>{{user.taux_vente}}</td>
+                        <td>
+                            <div ng-if="user.type === true">
+                                Automatique
+                            </div>
+                            <div ng-if="user.type === false">
+                                Manuelle
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <dir-pagination-controls
+                        max-size="8"
+                        direction-links="true"
+                        boundary-links="true"
+                        on-page-change="data.getData(newPageNumber,item)">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+
+
+</div>

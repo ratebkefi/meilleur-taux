@@ -1,0 +1,33 @@
+list_cron:
+    resource: "@ApiBundle/Resources/config/routing/cron.yml"
+    prefix: /cron-manager
+page:
+    resource: "@ApiBundle/Resources/config/routing/page.yml"
+    prefix: /page
+publicite:
+    resource: "@ApiBundle/Resources/config/routing/publicite.yml"
+    prefix:   /pub
+menus:
+    resource: "@ApiBundle/Resources/config/routing/menus.yml"
+    prefix: /menus
+adsence:
+    resource: "@ApiBundle/Resources/config/routing/adsence.yml"
+    prefix: /adsense
+membre:
+    resource: "@ApiBundle/Resources/config/routing/membre.yml"
+    prefix: /membre
+devise:
+    resource: "@ApiBundle/Resources/config/routing/devise.yml"
+    prefix: /devises
+banque:
+    resource: "@ApiBundle/Resources/config/routing/banque.yml"
+    prefix: /banque
+alerte:
+    resource: "@ApiBundle/Resources/config/routing/alerte.yml"
+    prefix: /alerte
+change:
+    resource: "@ApiBundle/Resources/config/routing/change.yml"
+    prefix: /change
+agence:
+    resource: "@ApiBundle/Resources/config/routing/agence.yml"
+    prefix: /agence

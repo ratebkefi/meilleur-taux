@@ -1,0 +1,41 @@
+<div uploader="uploader" class="animated fadeInRight">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h4 class="header2">Modification de la publicité Adsense: {{adsense.nom}} </h4>
+
+                <form name="banqueForm" ng-submit="modifier_adsense(adsense)">
+                    <div class="row">
+                        <div class="input-field col s12">
+                                <textarea id="code" ng-model="adsense.code" name="code"
+                                          class="validate materialize-textarea" length="120"></textarea>
+                            <label for="code">Code</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <div class="switch">
+                                <label for="etat">Etat
+                                    <input id="etat" ng-model="adsense.etat" type="checkbox" name="etat">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="btn orange lighten-2">Modifier
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('textarea#remarque').characterCounter();
+    });
+</script>
